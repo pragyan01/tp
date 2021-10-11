@@ -81,8 +81,6 @@ public class Parser {
             }
         }
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM d yyyy");
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         LocalDate localDate = LocalDate.parse(date, formatter);
