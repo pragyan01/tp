@@ -61,10 +61,7 @@ public class CommandManager {
             input = in.nextLine();
             inputArguments = input.trim().split(" ", 2);
             command = inputArguments[0];
-
         }
         System.out.println("    Bye! Hope to see you again soon!");
-
     }
-
 }
