@@ -191,13 +191,13 @@ Note: Keying in "y" will result in the previous session's data being deleted!
 
 ### List Manager
 
-- [**List everything**](#List-everything-on-current-date)
+- [**List everything**](#list-everything-on-current-date)
 
 ### Getting help
 - [**Access user help**](#help-command)
 
 ### Exiting CLI.ckFit
-- [**Exiting application**](#bye)
+- [**Exiting application**](#exiting-the-application)
 
 ### Miscellaneous
 
@@ -1239,4 +1239,4 @@ Command | Format of input
 [**List fluids from library**](#list-fluids-stored-in-library)| `library listfluids`
 [**List everything**](#List-everything-on-current-date)| `list <DATE>`
 [**Access user help**](#help-command)| `help`
-[**Exiting CLI.ckFit**](#exiting-clickfit)| `bye`
+[**Exiting CLI.ckFit**](#exiting-the-application)| `bye`
