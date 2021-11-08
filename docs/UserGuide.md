@@ -236,10 +236,11 @@ Example of usage:
 
 `add meal risotto /c 250 /d 14/10/2021 /t 08:30`
 
-Expected output:
+Expected outcome:
 
 ```
-Noted! CLI.ckFit has recorded your meal of risotto on 14/10/2021 and at 08:30. 250 calories has been added to the calorie count!
+Noted! CLI.ckFit has recorded your meal of risotto on 14/10/2021 and at 08:30. 
+250 calories has been added to the calorie count!
 ```
 
 ## Adding fluids
@@ -351,7 +352,8 @@ Example of usage:
 Expected outcome:
 
 ```
-Noted! CLI.ckFit has recorded your workout of description "jog" on 07/08/2021 at 15:00 where you burned 250 calories!
+Noted! CLI.ckFit has recorded your workout of description "jog" on 07/08/2021 
+at 15:00 where you burned 250 calories!
 ```
 
 ## Adding scheduled workout
@@ -397,7 +399,8 @@ Noted! CLI.ckFit has scheduled your workout of description "chest day" on 22/12/
 ```
 
 ```
-Noted! CLI.ckFit has scheduled your recurring workout of description "weekly chest day" on 07/12/2021 at 13:50.
+Noted! CLI.ckFit has scheduled your recurring workout of description "weekly chest day" 
+on 07/12/2021 at 13:50.
 ```
 
 ### With activity breakdown
@@ -438,7 +441,8 @@ Example of usage:
 
 Expected outcomes:
 ```
-Noted! CLI.ckFit has scheduled your recurring workout of description "weekly chest day" on 07/12/2021 at 15:00.
+Noted! CLI.ckFit has scheduled your recurring workout of description "weekly chest day" 
+on 07/12/2021 at 15:00.
 
 Activities Breakdown: 
 1. bench press: 5sets x 12reps
@@ -446,7 +450,8 @@ Activities Breakdown:
 ```
 
 ```
-Noted! CLI.ckFit has scheduled your workout of description "triathlon training" on 07/12/2021 at 15:00.
+Noted! CLI.ckFit has scheduled your workout of description "triathlon training" 
+on 07/12/2021 at 15:00.
 
 Activities Breakdown: 
 1. running: 3000metres
@@ -586,8 +591,8 @@ Example of usage:
 
 Expected outcome:
 ```
-Noted! CLI.ckFit has successfully deleted your recorded workout of description "jog" on 07/08/2021 at 15:00
-where you burned 250 calories!
+Noted! CLI.ckFit has successfully deleted your recorded workout of description "jog" 
+on 07/08/2021 at 15:00 where you burned 250 calories!
 ```
 
 ## Delete a scheduled workout
@@ -608,7 +613,8 @@ Example of usage:
 
 Expected outcome:
 ```
-Noted! CLI.ckFit has successfully deleted your recurring scheduled workout of description "weekly chest day" on 07/12/2021 at 15:00!
+Noted! CLI.ckFit has successfully deleted your recurring scheduled workout 
+of description "weekly chest day" on 07/12/2021 at 15:00!
 ```
 
 ## Delete a meal from library

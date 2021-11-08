@@ -75,6 +75,17 @@ public class Parser {
         return inputArguments.contains(CALORIE_SEPARATOR);
     }
 
+    //@@author pragyan01
+    /**
+     * Checks if the user's input contains volume separator ' /v '.
+     *
+     * @param inputArguments User's input.
+     * @return true, if input contains calorie separator, and false, if input does not contain calorie separator.
+     */
+    public static boolean containsVolumeSeparator(String inputArguments) {
+        return inputArguments.contains(VOLUME_SEPARATOR);
+    }
+
     //@@author EdwardZYWang
     public static boolean isRecurringWorkout(String inputArguments) {
         String[] splitResults = inputArguments.split(RECURRING_FLAG, 2);
@@ -268,6 +279,8 @@ public class Parser {
             userInput = inputArguments.split(DATE_SEPARATOR);
         } else if (containsTimeSeparator(inputArguments)) {
             userInput = inputArguments.split(TIME_SEPARATOR);
+        } else if (containsVolumeSeparator(inputArguments)) {
+            userInput = inputArguments.split(VOLUME_SEPARATOR);
         } else {
             return inputArguments;
         }
