@@ -6,7 +6,6 @@ import seedu.duke.exceptions.fluid.NegativeVolumeException;
 import seedu.duke.exceptions.foodbank.EmptyFoodDescription;
 import seedu.duke.exceptions.foodbank.FoodBankException;
 import seedu.duke.exceptions.foodbank.NegativeCaloriesException;
-import seedu.duke.exceptions.foodbank.NoCaloriesException;
 import seedu.duke.exceptions.foodbank.NoFoodFoundException;
 import seedu.duke.exceptions.schedule.GetActivityException;
 import seedu.duke.exceptions.schedule.InvalidActivityFormatException;
@@ -87,6 +86,12 @@ public class Parser {
     }
 
     //@@author EdwardZYWang
+    /**
+     * Checks if the user's input contains recurring workout flag ' /r'.
+     *
+     * @param inputArguments User's input.
+     * @return true, if input contains recurring workout flag, and false otherwise.
+     */
     public static boolean isRecurringWorkout(String inputArguments) {
         String[] splitResults = inputArguments.split(RECURRING_FLAG, 2);
         if (splitResults.length == 1) {

@@ -83,18 +83,18 @@ called, where userDate is the date specified by the user. Then, the static metho
 printing out a message to tell the user the total meal calories and number of meals.
 
 #### Class Diagram
-![](https://user-images.githubusercontent.com/69350459/138307467-cef8cdd8-06ce-4284-92b5-9fe5e1ef50ef.png)
+![image](https://user-images.githubusercontent.com/69350459/140748412-948edbb6-313f-4658-a373-25051414d9ae.png)
 
 Above are the UML class level diagrams of `Meal`, and `Tracker`. As seen in
 the diagram, the `Meal` class inherits from the `Tracker` class. This class diagram has been simplified for better readability.
 
 ### FoodBank
 #### FoodBank: Adding custom meal
-![image](https://user-images.githubusercontent.com/69350459/140660563-aa140c5d-7df4-4ae8-96e4-44c9ae4474dd.png)
+![image](https://user-images.githubusercontent.com/69350459/140748085-b258f953-5d76-4ce4-9a4f-974d410ff22b.png)
 
 The UML sequence diagram above shows what happens when the user attempts to add a meal to their library. 
 If the user inputs "library addmeal", the first if block's condition will be satisfied, and the exception 
-"EmptyFoodDescription()" will be thrown. Then the method "generateParameters(inputArguments)" is called, which sets 
+"EmptyLibraryDescription()" will be thrown. Then the method "generateParameters(inputArguments)" is called, which sets 
 the class level attributes. Then, a for loop will be entered until the entire meal arraylist has been iterated through. 
 If the user has input a meal that already exists within the meal arraylist, the exception "DuplicateFood()" will be 
 thrown. Lastly, after exiting the for loop, the static method "printAddedLibraryMeal(description,calories,totalMeals)", 
@@ -128,7 +128,7 @@ The UML sequence diagram above shows what happens when the input command is reco
 ### WeightTracker
 
 #### Class diagram
-![WeightTracker_class](https://user-images.githubusercontent.com/69446729/140641329-091135c4-798a-4ebb-a5d4-2af4882fc053.png)
+![image](https://user-images.githubusercontent.com/69350459/140748525-1ca74ba6-f530-4fd1-a6fe-c2952e184e78.png)
 
 Above are the UML class level diagrams of `WeightTracker`, `ClickfitMessages`, `Tracker` and relevant exception classes. 
 As seen in the diagram, the `WeightTracker` class is dependent on the `ClickfitMessages` class and inherits from the 
@@ -150,7 +150,7 @@ class for both the typical input and missing date cases. However, when an except
 
 #### Class diagram
 
-![ScheduleTracker_class_diag](https://user-images.githubusercontent.com/69461398/138324203-ea286780-6611-43f4-af77-3ea7cb59a42c.png)
+![image](https://user-images.githubusercontent.com/69350459/140748620-e191dccb-d8ef-43fa-8b4f-48def5b0d84a.png)
 
 Above are the UML class level diagrams of `ScheduleTracker` and `ScheduledWorkout`. As seen in the diagram, one 
 `ScheduleTracker` object keeps track/is linked to **any** number of `ScheduledWorkout` objects, thus have a 
@@ -381,7 +381,7 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
 
 ### Launching CLI.ckFit
 1. Ensure that you have Java 11 or above installed.
-2. Download the latest version of `CLI.ckFit` from [here](http://link.to/duke).
+2. Download the latest version of `CLI.ckFit` from [here](https://github.com/AY2122S1-CS2113T-F14-3/tp/releases/tag/v2.1).
 3. Go to the folder you saved the `CLIckFit.jar` file and note the absolute file path.
 4. If you are using Windows, open up a Command prompt terminal cmd.exe or powershell.exe and for
    Mac and Linux users, do the same with the terminal of your respective systems.
@@ -588,40 +588,45 @@ testers are expected to do more exploratory work for more comprehensive testing.
 1. Adding a meal omitting date and time
     * **Test Case**: `add meal pasta /c 190`
     * **Expected**: 
-   ```
-   Noted! CLI.ckFit has recorded your meal of pasta on 08/11/2021 and at 18:39. 190 calories has been added to the calorie count!"
-   ```
+      ```
+      Noted! CLI.ckFit has recorded your meal of pasta on 08/11/2021 and at 20:46. 
+      190 calories has been added to the calorie count!
+      ```
     
 2. Adding a meal with specified date and time
     * **Test Case**: `add meal pasta /c 190 /d 08/11/2021 /t 23:59`
     * **Expected**:
-   ```
-   Noted! CLI.ckFit has recorded your meal of pasta on 08/11/2021 and at 23:59. 190 calories has been added to the calorie count!"
-   ``` 
+      ```
+      Noted! CLI.ckFit has recorded your meal of pasta on 08/11/2021 and at 23:59. 
+      190 calories has been added to the calorie count!
+      ``` 
    
 3. Adding a meal with missing description
     * **Test Case**: `add meal /c 190`
     * **Expected**: 
-   ```
-   Please enter a meal/fluid description, and optionally, calories if not previously added to the library!
-   e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
-   e.g "add fluid {DESCRIPTION} /c {CALORIES}" OR "add fluid {DESCRIPTION}"
-   ```
+      ```
+      Please enter a meal/fluid description, volume for fluids, and optionally,
+      calories if not previously added to the library!
+      e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
+      e.g "add fluid {DESCRIPTION} /c {CALORIES} /v {volume}" OR "add fluid {DESCRIPTION}"
+      ```
    
 4. Adding a meal with missing calories
     * **Test Case**: `add meal pasta /c`
-* **Expected**:
-  ```
-  Please enter a meal/fluid description, and optionally, calories if not previously added to the library!
-  e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
-  e.g "add fluid {DESCRIPTION} /c {CALORIES}" OR "add fluid {DESCRIPTION}"
-  ```
+    * **Expected**:
+      ```
+      Please enter a meal/fluid description, volume for fluids, and optionally, 
+      calories if not previously added to the library! 
+      e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
+      e.g "add fluid {DESCRIPTION} /c {CALORIES} /v {volume}" OR "add fluid {DESCRIPTION}"
+      ```
 
 5. Adding a meal with invalid date or time format
     * **Test Case**: `add meal pasta /c 123 /d 08-11-21 /t 5:00pm`
     * **Expected**:
       ```
-      Please enter your date and time in the right format. It should be "DD/MM/YYYY" and "HH:MM" respectively.
+      Please enter your date and time in the right format. 
+      It should be "DD/MM/YYYY" and "HH:MM" respectively.
       ```
       
 6. Adding a meal with negative calories
@@ -635,16 +640,16 @@ testers are expected to do more exploratory work for more comprehensive testing.
 1. Deleting a meal with valid index
     * **Test Case**: `delete meal 1`
     * **Expected**:
-   ```
-   pasta will be removed from your list of meals consumed!
-   ```
+      ```
+      pasta will be removed from your list of meals consumed!
+      ```
 
 2. Deleting a meal with invalid index
     * **Test Case**: `delete meal -1`
     * **Expected**:
-     ```
-     Please enter a proper meal index. Use "list meals all" to view each meal's index
-     ```
+      ```
+      Please enter a proper meal index. Use "list meals all" to view each meal's index
+      ```
 
 3. Deleting a meal without specifying index
     * **Test Case**: `delete meal`
@@ -653,7 +658,7 @@ testers are expected to do more exploratory work for more comprehensive testing.
       Please enter the index of the meal you wish to delete!
       ```
 
-#### Listing workouts
+#### Listing meals
 1. Listing meals on a specific date
     * **Test Case**: `list meals 08/11/2021`
     * **Expected**:
@@ -683,7 +688,7 @@ testers are expected to do more exploratory work for more comprehensive testing.
      Total number of meals: 2
      Total calories: 144    
      ```
-3Listing meals on current date
+3. Listing meals on current date
    * **Test Case**: `list meals`
    * **Expected**:
      ```
@@ -695,6 +700,122 @@ testers are expected to do more exploratory work for more comprehensive testing.
      Total number of meals: 1
      Total calories: 122      
      ``` 
+
+### Fluid commands
+
+#### Adding a fluid
+
+1. Adding a fluid omitting date and time
+   * **Test Case**: `add fluid cola /c 100 /v 100`
+   * **Expected**:
+     ```
+     Noted! CLI.ckFit has recorded your drink of cola of 100 calories and 100 ml 
+     on 08/11/2021 19:47.
+     ```
+
+2. Adding a fluid with specified date and time
+   * **Test Case**: `add fluid cola /c 190 /v 100 /d 01/02/2021 /t 23:59`
+   * **Expected**:
+     ```
+     Noted! CLI.ckFit has recorded your drink of cola of 190 calories and 100 ml 
+     on 01/02/2021 23:59.
+     ``` 
+
+3. Adding a fluid with missing description
+   * **Test Case**: `add fluid /c 190`
+   * **Expected**:
+     ```
+     Please enter a meal/fluid description, volume for fluids, and optionally, 
+     calories if not previously added to the library! 
+     e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
+     e.g "add fluid {DESCRIPTION} /c {CALORIES} /v {volume}" OR "add fluid {DESCRIPTION}"
+     ```
+     
+4. Adding a fluid with missing calories
+   * **Test Case**: `add fluid water /c`
+   * **Expected**:
+     ```
+     Please enter a meal/fluid description, volume for fluids, and optionally, 
+     calories if not previously added to the library!
+     e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
+     e.g "add fluid {DESCRIPTION} /c {CALORIES} /v {volume}" OR "add fluid {DESCRIPTION}"
+     ```
+
+5. Adding a fluid with invalid date or time format
+   * **Test Case**: `add fluid cola /c 123 /d 08-11-21 /t 5:00pm`
+   * **Expected**:
+     ```
+     Please enter your date and time in the right format. 
+     It should be "DD/MM/YYYY" and "HH:MM" respectively.
+     ```
+
+6. Adding a fluid with negative calories
+   * **Test Case**: `add fluid pasta /c -123`
+   * **Expected**:
+     ```
+     Please input a positive integer value for your calories!
+     ```
+
+#### Deleting a fluid
+1. Deleting a fluid with valid index
+   * **Test Case**: `delete fluid 1`
+   * **Expected**:
+     ```
+     Noted! CLI.ckFit has deleted your drink of cola of 60 calories and 80 ml 
+     on 08/11/2021 20:24.
+     ```
+
+2. Deleting a fluid with invalid index
+   * **Test Case**: `delete fluid -1`
+   * **Expected**:
+     ```
+     This fluid entry does not exist. 
+     You may try again or wish to add a fluid entry first.
+     ```
+
+3. Deleting a fluid without specifying index
+   * **Test Case**: `delete fluid`
+   * **Expected**:
+     ```
+     Please enter a valid fluid index. 
+     You may wish to list to check the index numbers.
+     ```
+
+#### Listing fluids
+1. Listing fluids on a specific date
+   * **Test Case**: `list fluids 08/11/2021`
+   * **Expected**:
+     ```
+     1. cola
+     Calories: 190
+     Volume: 100
+     Date: 01/02/2021
+     Time: 23:59
+     
+     Total number of fluids: 1
+     Total calories: 190
+     ```
+     
+2. Listing fluids on all dates
+   * **Test Case**: `list fluids all`
+   * **Expected**:
+     ```
+     1. cola
+     Calories: 190
+     Volume: 100
+     Date: 01/02/2021
+     Time: 23:59
+     
+     2. sprite
+     Calories: 189
+     Volume: 250
+     Date: 19/09/2022
+     Time: 16:37
+     
+     Total number of fluids: 2
+     Total calories: 379
+     ```
+
 ### FoodBank commands
 
 #### Adding a custom meal
@@ -702,25 +823,28 @@ testers are expected to do more exploratory work for more comprehensive testing.
 1. Adding a custom meal 
    * **Test Case**: `library addmeal pasta /c 190`
    * **Expected**:
-   ```
-   pasta, which has 190 calories, will be added to your library of meals. You now have 1 meals!
-   ```
+     ```
+     pasta, which has 190 calories, will be added to your library of meals. 
+     You now have 1 meals!
+     ```
 
 2. Adding a custom meal without its calories
    * **Test Case**: `library addmeal pasta`
    * **Expected**:
-   ```
-   No such food or fluid with its associated calories is stored within your library. Please enter calories.
-   ``` 
+     ```
+     Please enter a food description, and its associated calories
+     e.g "library addmeal {DESCRIPTION} /c {CALORIES}"
+     e.g "library addfluid {DESCRIPTION} /c {CALORIES}"   
+     ``` 
 
 3. Adding a custom meal with missing description
    * **Test Case**: `library addmeal /c 190`
    * **Expected**:
-   ```
-   Please enter a meal/fluid description, and optionally, calories if not previously added to the library!
-   e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
-   e.g "add fluid {DESCRIPTION} /c {CALORIES}" OR "add fluid {DESCRIPTION}"
-   ```
+     ```
+     Please enter a food description, and its associated calories
+     e.g "library addmeal {DESCRIPTION} /c {CALORIES}"
+     e.g "library addfluid {DESCRIPTION} /c {CALORIES}"
+     ```
    
 6. Adding a meal with negative calories
    * **Test Case**: `library addmeal pasta /c -123`
@@ -729,20 +853,22 @@ testers are expected to do more exploratory work for more comprehensive testing.
      Please input a positive integer value for your calories!
      ```
 
-#### Deleting a meal
+#### Deleting a custom meal
 
 1. Deleting a meal with valid index
    * **Test Case**: `library deletemeal 1`
    * **Expected**:
-   ```
-   pasta will be removed from your list of meals consumed. You now have 0 meals left!
-   ```
+     ```
+     pasta will be removed from your meal library. 
+     You now have 0 meals left!
+     ```
 
 2. Deleting a meal with invalid index
    * **Test Case**: `library deletemeal -1`
    * **Expected**:
      ```
-     Please enter a valid meal index! Use "library listmeals" to see the meal indexes
+     Please enter a valid meal index! 
+     Use "library listmeals" to see the meal indexes
      ```
 
 3. Deleting a meal without specifying index
@@ -751,72 +877,7 @@ testers are expected to do more exploratory work for more comprehensive testing.
      ```
      Please enter a food index!
      ```
-
-#### Adding a custom fluid
-
-1. Adding a custom fluid
-   * **Test Case**: `library addfluid water /c 190`
-   * **Expected**:
-   
-```
-   water, which has 190 calories, will be added to your library of fluids. You now have 1 fluids!
-   ```
-
-2. Adding a custom meal without its calories
-   * **Test Case**: `library addfluid cola`
-   * **Expected**:
-   
-```
-Please enter a food description, and its associated calories
-e.g "library addmeal {DESCRIPTION} /c {CALORIES}"
-e.g "library addfluid {DESCRIPTION} /c {CALORIES}"
-   ``` 
-
-3. Adding a custom fluid with missing description
-   * **Test Case**: `library addfluid /c 190`
-   * **Expected**:
-   
-```
-   Please enter a food description, and its associated calories
-e.g "library addmeal {DESCRIPTION} /c {CALORIES}"
-e.g "library addfluid {DESCRIPTION} /c {CALORIES}"
-   ```
-
-6. Adding a fluid with negative calories
-   * **Test Case**: `library addfluid juice /c -123`
-   * **Expected**:
-     
-```
-     Please input a positive integer value for your calories!
-   ```
-
-#### Deleting a fluid
-
-1. Deleting a fluid with valid index
-   * **Test Case**: `library deletefluid 1`
-   * **Expected**:
-   
-```
-   water will be removed from your list of fluids consumed. You now have 0 fluids left!
-   ```
-
-2. Deleting a fluid with invalid index
-   * **Test Case**: `library deletemeal -1`
-   * **Expected**:
-     
-```
-     Please enter a valid fluid index! Use "library listfluids" to see the fluid indexes
-   ```
-
-3. Deleting a fluid without specifying index
-   * **Test Case**: `library deletefluid`
-   * **Expected**:
- ```
-     Please enter a food index!
-   ```
-  
-
-#### Listing workouts
+#### Listing custom meals
 
 1. Listing meals on a specific date
    * **Test Case**: `library listmeals`
@@ -828,108 +889,98 @@ e.g "library addfluid {DESCRIPTION} /c {CALORIES}"
      Total number of meals in library: 1
      ```
 
+#### Adding a custom fluid
 
-### Fluid commands
-
-#### Adding a fluid
-
-1. Adding a fluid omitting date and time
-   * **Test Case**: `add fluid cola /c 100 /v 100`
+1. Adding a custom fluid
+   * **Test Case**: `library addfluid water /c 190`
    * **Expected**:
-   
-```
-   Noted! CLI.ckFit has recorded your drink of cola of 100 calories and 100 ml on 08/11/2021 19:47.
-   ```
+     ```
+     water, which has 190 calories, will be added to your library of fluids. 
+     You now have 1 fluids!
+     ```
 
-2. Adding a fluid with specified date and time
-   * **Test Case**: `add fluid cola /c 190 /v 100 /d 01/02/2021 /t 23:59`
+2. Adding a custom meal without its calories
+   * **Test Case**: `library addfluid cola`
    * **Expected**:
-   
-```
-   Noted! CLI.ckFit has recorded your drink of cola of 190 calories and 100 ml on 01/02/2021 23:59.
-  ``` 
+     ```
+     Please enter a food description, and its associated calories
+     e.g "library addmeal {DESCRIPTION} /c {CALORIES}"
+     e.g "library addfluid {DESCRIPTION} /c {CALORIES}"
+     ``` 
 
-3. Adding a fluid with missing description
-   * **Test Case**: `add fluid /c 190`
+3. Adding a custom fluid with missing description
+   * **Test Case**: `library addfluid /c 190`
    * **Expected**:
-```
-Please enter a meal/fluid description, volume for fluids, and optionally, calories if not previously added to the library! 
-e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
-e.g "add fluid {DESCRIPTION} /c {CALORIES} /v {volume}" OR "add fluid {DESCRIPTION}"
-```
+     ```
+     Please enter a food description, and its associated calories
+     e.g "library addmeal {DESCRIPTION} /c {CALORIES}"
+     e.g "library addfluid {DESCRIPTION} /c {CALORIES}"
+     ```
 
-4. Adding a fluid with missing calories
-   * **Test Case**: `add fluid water /c`
+6. Adding a fluid with negative calories
+   * **Test Case**: `library addfluid juice /c -123`
    * **Expected**:
-  ```
-Please enter a meal/fluid description, volume for fluids, and optionally, calories if not previously added to the library!
-e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
-e.g "add fluid {DESCRIPTION} /c {CALORIES} /v {volume}" OR "add fluid {DESCRIPTION}"
-  ```
-
-5. Adding a fluid with invalid date or time format
-   * **Test Case**: `add fluid cola /c 123 /d 08-11-21 /t 5:00pm`
-   * **Expected**:
-   
-```
-   Please enter your date and time in the right format. It should be "DD/MM/YYYY" and "HH:MM" respectively.
-   ```
-
-6. Adding a meal with negative calories
-   * **Test Case**: `add meal pasta /c -123`
-   * **Expected**:
-     
-```
+     ```
      Please input a positive integer value for your calories!
-   ```
+     ```
 
-#### Deleting a fluid
+#### Deleting a custom fluid
+
 1. Deleting a fluid with valid index
-   * **Test Case**: `delete fluid 1`
+   * **Test Case**: `library deletefluid 1`
    * **Expected**:
-   
-```
-Noted! CLI.ckFit has deleted your drink of cola of 60 calories and 80 ml on 08/11/2021 20:24.
-   ```
+     ```
+     water will be removed from your list of fluids consumed. 
+     You now have 0 fluids left!
+     ```
 
 2. Deleting a fluid with invalid index
-   * **Test Case**: `delete fluid -1`
+   * **Test Case**: `library deletemeal -1`
    * **Expected**:
-   
-```
-     This fluid entry does not exist. You may try again or wish to add a fluid entry first.
-   ```
+     ```
+     Please enter a valid fluid index! 
+     Use "library listfluids" to see the fluid indexes
+     ```
 
 3. Deleting a fluid without specifying index
-   * **Test Case**: `delete fluid`
+   * **Test Case**: `library deletefluid`
    * **Expected**:
-   
-```
-   Please enter a valid fluid index. You may wish to list to check the index numbers.
- ```
+     ```
+     Please enter a food index!
+     ```
+
+#### Listing custom fluids
+
+1. Listing fluids on a specific date
+   * **Test Case**: `library listfluids`
+   * **Expected**:
+     ```
+     1. water
+     Calories: 190
+     
+     Total number of fluids in library: 1
+     ```
 
 #### Listing calories
 
 1. Listing meals on a specific date
    * **Test Case**: `list calories`
    * **Expected**:
-     
-```
-   Your total calorie consumption for 08/11/2021 is: 60 calories.
-   Your total calories burned for 08/11/2021 is: 0 calories.
-   Your NET calories for 08/11/2021 is: 60 calories.
-   ```
+     ```
+     Your total calorie consumption for 08/11/2021 is: 60 calories.
+     Your total calories burned for 08/11/2021 is: 0 calories.
+     Your NET calories for 08/11/2021 is: 60 calories.
+     ```
 
 #### Listing volumes
 
 1. Listing meals on a specific date
    * **Test Case**: `list volumes`
    * **Expected**:
+     ```
+     Your total volume consumption for 08/11/2021 is: 100 ml.
+     ```
      
-```
-Your total volume consumption for 08/11/2021 is: 100 ml.
-   ```
-
 ### Weight Commands
 
 #### Adding a weight
