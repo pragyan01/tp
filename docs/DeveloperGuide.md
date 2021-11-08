@@ -83,18 +83,18 @@ called, where userDate is the date specified by the user. Then, the static metho
 printing out a message to tell the user the total meal calories and number of meals.
 
 #### Class Diagram
-![](https://user-images.githubusercontent.com/69350459/138307467-cef8cdd8-06ce-4284-92b5-9fe5e1ef50ef.png)
+![image](https://user-images.githubusercontent.com/69350459/140748412-948edbb6-313f-4658-a373-25051414d9ae.png)
 
 Above are the UML class level diagrams of `Meal`, and `Tracker`. As seen in
 the diagram, the `Meal` class inherits from the `Tracker` class. This class diagram has been simplified for better readability.
 
 ### FoodBank
 #### FoodBank: Adding custom meal
-![image](https://user-images.githubusercontent.com/69350459/140660563-aa140c5d-7df4-4ae8-96e4-44c9ae4474dd.png)
+![image](https://user-images.githubusercontent.com/69350459/140748085-b258f953-5d76-4ce4-9a4f-974d410ff22b.png)
 
 The UML sequence diagram above shows what happens when the user attempts to add a meal to their library. 
 If the user inputs "library addmeal", the first if block's condition will be satisfied, and the exception 
-"EmptyFoodDescription()" will be thrown. Then the method "generateParameters(inputArguments)" is called, which sets 
+"EmptyLibraryDescription()" will be thrown. Then the method "generateParameters(inputArguments)" is called, which sets 
 the class level attributes. Then, a for loop will be entered until the entire meal arraylist has been iterated through. 
 If the user has input a meal that already exists within the meal arraylist, the exception "DuplicateFood()" will be 
 thrown. Lastly, after exiting the for loop, the static method "printAddedLibraryMeal(description,calories,totalMeals)", 
@@ -128,7 +128,7 @@ The UML sequence diagram above shows what happens when the input command is reco
 ### WeightTracker
 
 #### Class diagram
-![WeightTracker_class](https://user-images.githubusercontent.com/69446729/140641329-091135c4-798a-4ebb-a5d4-2af4882fc053.png)
+![image](https://user-images.githubusercontent.com/69350459/140748525-1ca74ba6-f530-4fd1-a6fe-c2952e184e78.png)
 
 Above are the UML class level diagrams of `WeightTracker`, `ClickfitMessages`, `Tracker` and relevant exception classes. 
 As seen in the diagram, the `WeightTracker` class is dependent on the `ClickfitMessages` class and inherits from the 
@@ -150,7 +150,7 @@ class for both the typical input and missing date cases. However, when an except
 
 #### Class diagram
 
-![ScheduleTracker_class_diag](https://user-images.githubusercontent.com/69461398/138324203-ea286780-6611-43f4-af77-3ea7cb59a42c.png)
+![image](https://user-images.githubusercontent.com/69350459/140748620-e191dccb-d8ef-43fa-8b4f-48def5b0d84a.png)
 
 Above are the UML class level diagrams of `ScheduleTracker` and `ScheduledWorkout`. As seen in the diagram, one 
 `ScheduleTracker` object keeps track/is linked to **any** number of `ScheduledWorkout` objects, thus have a 
