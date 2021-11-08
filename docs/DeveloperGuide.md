@@ -447,7 +447,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Test Case**: `add workout test /c 123 /d 08-11-21 /t 5:00pm`
     * **Expected**: 
       ```
-      Please enter your date and time in the right format. It should be "DD/MM/YYYY" and "HH:MM" respectively.
+      Please enter your date and time in the right format. 
+      It should be "DD/MM/YYYY" and "HH:MM" respectively.
       ```
       
 #### Deleting a workout
@@ -501,7 +502,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Test Case**: `add schedule test /d 12-12-21 /t 11:59pm`
     * **Expected**:
       ```
-      Please enter your date and time in the right format. It should be "DD/MM/YYYY" and "HH:MM" respectively.
+      Please enter your date and time in the right format. 
+      It should be "DD/MM/YYYY" and "HH:MM" respectively.
       ```
       
 5. Adding a scheduled workout with a date in the past
@@ -517,7 +519,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Expected**:
       ```
       Missing activity splitter ":" detected.
-      Please enter [activity name]:[sets]x[reps] or [activity name]:[distance in metres] for your workout activities
+      Please enter [activity name]:[sets]x[reps] or [activity name]:[distance in metres] 
+      for your workout activities
       ```
       
 6. Adding a scheduled workout with activity breakdown, unnecessary quantifier "x"
@@ -525,8 +528,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Expected**:
       ```
       Unnecessary activity quantifier splitter "x" detected.
-      Please enter [activity name]:[distance in metres] for distance based workout activities if your
-      activity name is either running/swimming/cycling.
+      Please enter [activity name]:[distance in metres] for distance based workout activities 
+      if your activity name is either running/swimming/cycling.
       E.g. running:8000
       ```
       
@@ -543,7 +546,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Expected**: 
       ```
       There was an issue getting your activity breakdown.
-      Please enter a positive integer [distance in metres] for distance based activities(swimming/running/cycling).
+      Please enter a positive integer [distance in metres] for distance based 
+      activities, namely swimming/running/cycling.
       E.g. running:8000
       Enter two positive integers in the format [set]x[reps] for everything else.
       E.g. bench press:3x12
@@ -748,6 +752,70 @@ testers are expected to do more exploratory work for more comprehensive testing.
      Please enter a food index!
      ```
 
+#### Adding a custom fluid
+
+1. Adding a custom fluid
+   * **Test Case**: `library addfluid water /c 190`
+   * **Expected**:
+   
+```
+   water, which has 190 calories, will be added to your library of fluids. You now have 1 fluids!
+   ```
+
+2. Adding a custom meal without its calories
+   * **Test Case**: `library addfluid cola`
+   * **Expected**:
+   
+```
+Please enter a food description, and its associated calories
+e.g "library addmeal {DESCRIPTION} /c {CALORIES}"
+e.g "library addfluid {DESCRIPTION} /c {CALORIES}"
+   ``` 
+
+3. Adding a custom fluid with missing description
+   * **Test Case**: `library addfluid /c 190`
+   * **Expected**:
+   
+```
+   Please enter a food description, and its associated calories
+e.g "library addmeal {DESCRIPTION} /c {CALORIES}"
+e.g "library addfluid {DESCRIPTION} /c {CALORIES}"
+   ```
+
+6. Adding a fluid with negative calories
+   * **Test Case**: `library addfluid juice /c -123`
+   * **Expected**:
+     
+```
+     Please input a positive integer value for your calories!
+   ```
+
+#### Deleting a fluid
+
+1. Deleting a fluid with valid index
+   * **Test Case**: `library deletefluid 1`
+   * **Expected**:
+   
+```
+   water will be removed from your list of fluids consumed. You now have 0 fluids left!
+   ```
+
+2. Deleting a fluid with invalid index
+   * **Test Case**: `library deletemeal -1`
+   * **Expected**:
+     
+```
+     Please enter a valid fluid index! Use "library listfluids" to see the fluid indexes
+   ```
+
+3. Deleting a fluid without specifying index
+   * **Test Case**: `library deletefluid`
+   * **Expected**:
+ ```
+     Please enter a food index!
+   ```
+  
+
 #### Listing workouts
 
 1. Listing meals on a specific date
@@ -759,4 +827,162 @@ testers are expected to do more exploratory work for more comprehensive testing.
      
      Total number of meals in library: 1
      ```
+
+
+### Fluid commands
+
+#### Adding a fluid
+
+1. Adding a fluid omitting date and time
+   * **Test Case**: `add fluid cola /c 100 /v 100`
+   * **Expected**:
+   
+```
+   Noted! CLI.ckFit has recorded your drink of cola of 100 calories and 100 ml on 08/11/2021 19:47.
+   ```
+
+2. Adding a fluid with specified date and time
+   * **Test Case**: `add fluid cola /c 190 /v 100 /d 01/02/2021 /t 23:59`
+   * **Expected**:
+   
+```
+   Noted! CLI.ckFit has recorded your drink of cola of 190 calories and 100 ml on 01/02/2021 23:59.
+  ``` 
+
+3. Adding a fluid with missing description
+   * **Test Case**: `add fluid /c 190`
+   * **Expected**:
+```
+Please enter a meal/fluid description, volume for fluids, and optionally, calories if not previously added to the library! 
+e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
+e.g "add fluid {DESCRIPTION} /c {CALORIES} /v {volume}" OR "add fluid {DESCRIPTION}"
+```
+
+4. Adding a fluid with missing calories
+   * **Test Case**: `add fluid water /c`
+   * **Expected**:
+  ```
+Please enter a meal/fluid description, volume for fluids, and optionally, calories if not previously added to the library!
+e.g "add meal {DESCRIPTION} /c {CALORIES}" OR "add meal {DESCRIPTION}"
+e.g "add fluid {DESCRIPTION} /c {CALORIES} /v {volume}" OR "add fluid {DESCRIPTION}"
+  ```
+
+5. Adding a fluid with invalid date or time format
+   * **Test Case**: `add fluid cola /c 123 /d 08-11-21 /t 5:00pm`
+   * **Expected**:
+   
+```
+   Please enter your date and time in the right format. It should be "DD/MM/YYYY" and "HH:MM" respectively.
+   ```
+
+6. Adding a meal with negative calories
+   * **Test Case**: `add meal pasta /c -123`
+   * **Expected**:
+     
+```
+     Please input a positive integer value for your calories!
+   ```
+
+#### Deleting a fluid
+1. Deleting a fluid with valid index
+   * **Test Case**: `delete fluid 1`
+   * **Expected**:
+   
+```
+Noted! CLI.ckFit has deleted your drink of cola of 60 calories and 80 ml on 08/11/2021 20:24.
+   ```
+
+2. Deleting a fluid with invalid index
+   * **Test Case**: `delete fluid -1`
+   * **Expected**:
+   
+```
+     This fluid entry does not exist. You may try again or wish to add a fluid entry first.
+   ```
+
+3. Deleting a fluid without specifying index
+   * **Test Case**: `delete fluid`
+   * **Expected**:
+   
+```
+   Please enter a valid fluid index. You may wish to list to check the index numbers.
+ ```
+
+#### Listing calories
+
+1. Listing meals on a specific date
+   * **Test Case**: `list calories`
+   * **Expected**:
+     
+```
+   Your total calorie consumption for 08/11/2021 is: 60 calories.
+   Your total calories burned for 08/11/2021 is: 0 calories.
+   Your NET calories for 08/11/2021 is: 60 calories.
+   ```
+
+#### Listing volumes
+
+1. Listing meals on a specific date
+   * **Test Case**: `list volumes`
+   * **Expected**:
+     
+```
+Your total volume consumption for 08/11/2021 is: 100 ml.
+   ```
+
+### Weight Commands
+
+#### Adding a weight
+1. Adding a weight for current date
+   * **Test Case**: `add weight 50`
+   * **Expected**: `Noted! CLI.ckFit has recorded your weight as 50.0 kg on 08/11/2021. Check back for your progress!`
+2. Adding a weight for specific date
+   * **Test Case**: `add weight 50 08/11/2021`
+   * **Expected**: `Noted! CLI.ckFit has recorded your weight as 50.0 kg on 08/11/2021. Check back for your progress!`
+3. Adding a weight for unaccepted weight
+(only numbers to 1 decimal point from 0 <= weight <= 1000 allowed)
+   * **Test Case**: `add weight 99999`
+   * **Expected**:
+   ```
+   Exceeded maximum weight 
+   An unknown error has occurred in Weight Tracker
+   ```
+4. Adding a weight with omission of weight
+   * **Test Case**: `add weight`
+   * **Expected**: `CLI.ckFit has detected a wrong input, kindly check your inputs or type "help commands" for input examples.`
+
+#### Deleting a weight
+1. Deleting a weight with valid index
+   * **Test Case**: `delete weight 1`
+   * **Expected**: `Noted! CLI.ckFit has successfully deleted your weight of 50.0 kg on 08/11/2021.`
+2. Deleting a weight with invalid index
+   * **Test Case**: `delete weight -1`
+   * **Expected**: 
+   ```
+   CLI.ckFit encountered a problem deleting your weight.
+   Please ensure the index is within the list.
+   ```
+3. Deleting a weight with omission of index
+   * **Test Case**: `delete weight`
+   * **Expected**:
+   ```
+   CLI.ckFit encountered a problem deleting your weight.
+   Please follow the format: delete weight INDEX
+   ```
+   
+#### Listing weights
+1. Listing weights for current date
+   * **Test Case**: `list weights`
+   * **Expected**:
+   ```
+   1. Weight: 50.0 kg
+   Total number of weights: 1
+   ```
+2. Listing weights for specific date
+   * **Test Case**: `list weights 08/11/2021`
+   * **Expected**:
+   ```
+   1. Weight: 50.0 kg
+   Total number of weights: 1
+   ```
 

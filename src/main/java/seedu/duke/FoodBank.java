@@ -3,6 +3,7 @@ package seedu.duke;
 import seedu.duke.exceptions.foodbank.DuplicateFood;
 import seedu.duke.exceptions.foodbank.EmptyFluidBankException;
 import seedu.duke.exceptions.foodbank.EmptyFoodDescription;
+import seedu.duke.exceptions.foodbank.EmptyLibraryDescription;
 import seedu.duke.exceptions.foodbank.EmptyMealBankException;
 import seedu.duke.exceptions.foodbank.FoodBankException;
 import seedu.duke.exceptions.foodbank.InvalidFluidIndexException;
@@ -61,9 +62,13 @@ public class FoodBank {
     public static void addCustomFluid(String inputArguments) throws FoodBankException {
         totalFluids = fluids.size();
         if (inputArguments == null) {
-            throw new EmptyFoodDescription();
+            throw new EmptyLibraryDescription();
         }
-        generateParameters(inputArguments);
+        try {
+            generateParameters(inputArguments);
+        } catch (EmptyFoodDescription | NoFoodFoundException e) {
+            throw new EmptyLibraryDescription();
+        }
         inputArguments = description + " /c " + calories;
         for (String f : fluids) {
             if (f.contains(description)) {
@@ -157,9 +162,13 @@ public class FoodBank {
     public static void addCustomMeal(String inputArguments) throws FoodBankException {
         totalMeals = meals.size();
         if (inputArguments == null) {
-            throw new EmptyFoodDescription();
+            throw new EmptyLibraryDescription();
         }
-        generateParameters(inputArguments);
+        try {
+            generateParameters(inputArguments);
+        } catch (EmptyFoodDescription | NoFoodFoundException e) {
+            throw new EmptyLibraryDescription();
+        }
         for (String m : meals) {
             if (m.contains(description)) {
                 throw new DuplicateFood();
