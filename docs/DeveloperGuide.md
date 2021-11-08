@@ -671,23 +671,25 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
       Total number of meals: 1
       Total calories: 122      
       ```
+    
 2. Listing meals on all dates
    * **Test Case**: `list meals all`
    * **Expected**:
-     ```
-     1. pasta
-     Calories: 122
-     Date: 08/11/2021
-     Time: 19:17
+      ```
+      1. pasta
+      Calories: 122
+      Date: 08/11/2021
+      Time: 19:17
      
-     2. pizza
-     Calories: 22
-     Date: 15/03/2022
-     Time: 09:37
+      2. pizza
+      Calories: 22
+      Date: 15/03/2022
+      Time: 09:37
      
-     Total number of meals: 2
-     Total calories: 144    
-     ```
+      Total number of meals: 2
+      Total calories: 144    
+      ```
+    
 3. Listing meals on current date
    * **Test Case**: `list meals`
    * **Expected**:
@@ -782,6 +784,7 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
      ```
 
 #### Listing fluids
+
 1. Listing fluids on a specific date
    * **Test Case**: `list fluids 08/11/2021`
    * **Expected**:
@@ -859,7 +862,7 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
    * **Test Case**: `library deletemeal 1`
    * **Expected**:
      ```
-     pasta will be removed from your meal library. 
+     pasta will be removed from your meal library.
      You now have 0 meals left!
      ```
 
@@ -877,6 +880,7 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
      ```
      Please enter a food index!
      ```
+    
 #### Listing custom meals
 
 1. Listing meals on a specific date
