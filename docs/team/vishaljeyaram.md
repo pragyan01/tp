@@ -19,9 +19,7 @@ which can give you an idea of your current fitness level.
     * inputs is compared with the names of all the meals within the meal library. If the meal exists, the calories of that particular
     * meal will be returned. Else, an exception will be thrown. One challenge that was faced was ensuring that no duplicate meals were stored
     * in the meal library. Thus, when adding a meal to the meal library, the name of the meal added to compared with all existing 
-    * meals within the meal library. Another challenge was ensuring that the user had input the meal with a description (name). Thus,
-    * the "getDescription" method was called to obtain the description of the meal. The description was then checked for any separators. 
-    * If it contained any separators, it was considered invalid, and an exception was thrown.
+    * meals within the meal library. 
 
 * New feature: The current date will be generated if the date has not been keyed in. 
     * What it does: Obtains user's system's date and uses this date if the user has not input a date for any of their
@@ -31,9 +29,7 @@ which can give you an idea of your current fitness level.
     * incorrect input. This wastes more time. Hence, in order to quicken the process, the current date will be input, saving 
     * the user time, if they do not manually input the date.
     * Highlights: The user input's is checked to see if the user has input a date separator. If not, the system date will 
-    * be generated using the Java's "getSystemDate()" method. A challenge that was faced was also making sure 
-    * that the date that was being generated was checked against, and added to the ArrayList of dates on which at least 
-    * one fitness parameter was added. This ArrayList of dates was stored in the "DateTracker" class.
+    * be generated using the Java's "getSystemDate()" method. 
 
 * New feature: Optional calculator calculates recommended caloric intake for the user.
     * What it does: Generates the ideal recommended caloric intake for users by taking in their activity level, sex, weight,
