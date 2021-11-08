@@ -667,9 +667,8 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
       Calories: 122
       Date: 08/11/2021
       Time: 19:17
-      
       Total number of meals: 1
-      Total calories: 122      
+      Total calories: 122
       ```
     
 2. Listing meals on all dates
@@ -680,14 +679,12 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
       Calories: 122
       Date: 08/11/2021
       Time: 19:17
-     
       2. pizza
       Calories: 22
       Date: 15/03/2022
       Time: 09:37
-     
       Total number of meals: 2
-      Total calories: 144    
+      Total calories: 144
       ```
     
 3. Listing meals on current date
@@ -698,9 +695,8 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
      Calories: 122
      Date: 08/11/2021
      Time: 19:17
-     
      Total number of meals: 1
-     Total calories: 122      
+     Total calories: 122
      ``` 
 
 ### Fluid commands
@@ -794,7 +790,6 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
      Volume: 100
      Date: 01/02/2021
      Time: 23:59
-     
      Total number of fluids: 1
      Total calories: 190
      ```
@@ -808,13 +803,11 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
      Volume: 100
      Date: 01/02/2021
      Time: 23:59
-     
      2. sprite
      Calories: 189
      Volume: 250
      Date: 19/09/2022
      Time: 16:37
-     
      Total number of fluids: 2
      Total calories: 379
      ```
@@ -889,7 +882,6 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
      ```
      1. pasta
      Calories: 122
-     
      Total number of meals in library: 1
      ```
 
@@ -961,7 +953,6 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
      ```
      1. water
      Calories: 190
-     
      Total number of fluids in library: 1
      ```
 
