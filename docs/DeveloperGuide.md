@@ -103,7 +103,7 @@ to the library.
 
 ### FluidTracker
 #### Class diagram
-![](https://user-images.githubusercontent.com/69446495/138308110-c73bc021-3744-4164-98dc-52b7f76cb4c0.png)
+![](https://user-images.githubusercontent.com/69461398/140756868-222576b6-87b1-4c10-9b7a-deac1e5c5643.png)
 
 Above are the UML class level diagrams of `Fluid`, `FluidExceptions` and `Tracker`. As seen in the diagram, the `Fluid` class is dependent on the `FluidExceptions` and the `Fluid`class inherits from the `Tracker` class. This class diagram has been simplified for better readability.
 
@@ -228,13 +228,49 @@ sees fit.
 
 ## Appendix E: Instructions for manual testing
 
+### Launching CLI.ckFit
+1. Ensure that you have Java 11 or above installed.
+2. Download the latest version of `CLI.ckFit` from [here](https://github.com/AY2122S1-CS2113T-F14-3/tp/releases/tag/v2.1).
+3. Go to the folder you saved the `CLIckFit.jar` file and note the absolute file path.
+4. If you are using Windows, open up a Command prompt terminal cmd.exe or powershell.exe and for
+   Mac and Linux users, do the same with the terminal of your respective systems.
+5. Navigate to the folder where the `CLIckFit.jar` file is stored.
+6. Execute `java -jar CLIckFit.jar` in the terminal, and the application will start running.
+
+**Expected**: CLI.ckFit will launch and a welcome message will be displayed.
+
+### Saving Data
+Data is saved in "Food.txt", "FoodBank.txt", "Weight.txt", "Workout.txt" and "Schedule.txt" in the same folder
+as your `CLIckFit.jar`.
+   * **Test Case**:   
+      1. Run `CLIckFit.jar`.
+         * **Note**: Ensure this is done in a new isolated folder or all data is already wiped prior.
+      3. Add one valid meal, fluid, library, weight, workout and schedule entry each.
+      4. Verify that there is a new entry in all the respective data files.
+         * **Note**: Closing and reopening the data files might be required to see the changes.
+      5. Exit the application.
+      6. Verify that data is still saved in their respective data files.
+      7. Run `CLIckFit.jar` again and load the saved data.
+      8. Verify that data is loaded correctly by listing the respective entries.
+      9. Delete all entries added in *step 3*.
+      9. Exit the application.
+   * **Expected**: "Food.txt", "FoodBank.txt", "Weight.txt", "Workout.txt" and "Schedule.txt" will be empty.
+
+### Command testing
+Please check out CLI.ckFit's [User Guide](https://ay2122s1-cs2113t-f14-3.github.io/tp/UserGuide.html) for more detailed
+walk through of all commands and their formats.
+
+Take note that the following sections will focus more on command behavior not specified in the User Guide, such as 
+expected output for incorrect or invalid inputs. The test cases stated in the following sections are not exhaustive and 
+testers are expected to do more exploratory work for more comprehensive testing. 
+
 ### BMI calculator and Recommended caloric intake calculator
 
 Description: It is a calculator that allows the user to check his current BMI and daily recommended caloric intake.
-The user will be asked to enter his weight, height, age, activity level and gender. 
+The user will be asked to enter his weight, height, age, activity level and gender.
 
 #### Gender:
-Possible inputs: M , F 
+Possible inputs: M , F
 
 Wrong inputs: negative integers and doubles, symbols, combination of integers and doubles with symbols
 and strings, m, f
@@ -258,7 +294,7 @@ Expected:
 #### Weight:
 Possible inputs: 60, 60.5 (integers or doubles are accepted)
 
-Wrong inputs: negative integers and doubles, symbols, strings, combination of integers and doubles with symbols 
+Wrong inputs: negative integers and doubles, symbols, strings, combination of integers and doubles with symbols
 and strings
 
 Testcase 1 : -34 (negative integers or doubles are not accepted)
@@ -338,7 +374,7 @@ Expected:
 #### Activity level:
 Possible inputs: 1, 2, 3, 4, 5 (integers 1 to 5)
 
-Wrong inputs: negative integers and doubles, positive doubles, symbols, strings, combination of integers and 
+Wrong inputs: negative integers and doubles, positive doubles, symbols, strings, combination of integers and
 doubles with symbols and strings
 
 Testcase 1 : 1.0 (doubles are not accepted even though it is within the range of 1 to 5)
@@ -378,42 +414,6 @@ If all the same inputs are used and accepted, the user will be greeted with this
 `Would you like to clear all records of your fitness journey?
 Key in "y" to clear your records, or press enter keystroke to load in data from your previous session(s)
 Note: Keying in "y" will result in the previous session's data being deleted!`
-
-### Launching CLI.ckFit
-1. Ensure that you have Java 11 or above installed.
-2. Download the latest version of `CLI.ckFit` from [here](https://github.com/AY2122S1-CS2113T-F14-3/tp/releases/tag/v2.1).
-3. Go to the folder you saved the `CLIckFit.jar` file and note the absolute file path.
-4. If you are using Windows, open up a Command prompt terminal cmd.exe or powershell.exe and for
-   Mac and Linux users, do the same with the terminal of your respective systems.
-5. Navigate to the folder where the `CLIckFit.jar` file is stored.
-6. Execute `java -jar CLIckFit.jar` in the terminal, and the application will start running.
-
-**Expected**: CLI.ckFit will launch and a welcome message will be displayed.
-
-### Saving Data
-Data is saved in "Food.txt", "FoodBank.txt", "Weight.txt", "Workout.txt" and "Schedule.txt" in the same folder
-as your `CLIckFit.jar`.
-   * **Test Case**:   
-      1. Run `CLIckFit.jar`.
-         * **Note**: Ensure this is done in a new isolated folder or all data is already wiped prior.
-      3. Add one valid meal, fluid, library, weight, workout and schedule entry each.
-      4. Verify that there is a new entry in all the respective data files.
-         * **Note**: Closing and reopening the data files might be required to see the changes.
-      5. Exit the application.
-      6. Verify that data is still saved in their respective data files.
-      7. Run `CLIckFit.jar` again and load the saved data.
-      8. Verify that data is loaded correctly by listing the respective entries.
-      9. Delete all entries added in *step 3*.
-      9. Exit the application.
-   * **Expected**: "Food.txt", "FoodBank.txt", "Weight.txt", "Workout.txt" and "Schedule.txt" will be empty.
-
-### Command testing
-Please check out CLI.ckFit's [User Guide](https://ay2122s1-cs2113t-f14-3.github.io/tp/UserGuide.html) for more detailed
-walk through of all commands and their formats.
-
-Take note that the following sections will focus more on command behavior not specified in the User Guide, such as 
-expected output for incorrect or invalid inputs. The test cases stated in the following sections are not exhaustive and 
-testers are expected to do more exploratory work for more comprehensive testing. 
 
 ### Workout Commands
 
