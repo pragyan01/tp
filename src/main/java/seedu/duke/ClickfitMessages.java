@@ -274,7 +274,7 @@ public class ClickfitMessages {
      * To notify the user that a meal has been deleted from their library.
      */
     public static void printDeletedLibraryMeal(String description, int totalMeals) {
-        System.out.println(description + " will be removed from your list of meals consumed. You now have "
+        System.out.println(description + " will be removed from your meal library. You now have "
                 + totalMeals + " meals left!\n");
     }
 
