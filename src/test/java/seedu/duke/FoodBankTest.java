@@ -3,6 +3,7 @@ package seedu.duke;
 import org.junit.jupiter.api.Test;
 import seedu.duke.exceptions.foodbank.DuplicateFood;
 import seedu.duke.exceptions.foodbank.EmptyFoodDescription;
+import seedu.duke.exceptions.foodbank.EmptyLibraryDescription;
 import seedu.duke.exceptions.foodbank.EmptyMealBankException;
 import seedu.duke.exceptions.foodbank.FoodBankException;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -30,7 +31,7 @@ public class FoodBankTest {
     void addCustomMeal2() {
         FoodBank foodBank = new FoodBank();
         String input = null;
-        assertThrows(EmptyFoodDescription.class, () -> FoodBank.addCustomMeal(input));
+        assertThrows(EmptyLibraryDescription.class, () -> FoodBank.addCustomMeal(input));
     }
 
     //@@author VishalJeyaram
@@ -48,7 +49,7 @@ public class FoodBankTest {
     void addCustomMeal4() {
         FoodBank foodBank = new FoodBank();
         String input = " ";
-        assertThrows(NoFoodFoundException.class, () -> FoodBank.addCustomMeal(input));
+        assertThrows(EmptyLibraryDescription.class, () -> FoodBank.addCustomMeal(input));
     }
 
     //@@author VishalJeyaram
@@ -64,7 +65,7 @@ public class FoodBankTest {
     void addCustomMeal6() {
         FoodBank foodBank = new FoodBank();
         String input = "21";
-        assertThrows(NoFoodFoundException.class, () -> FoodBank.addCustomMeal(input));
+        assertThrows(EmptyLibraryDescription.class, () -> FoodBank.addCustomMeal(input));
     }
 
     //@@author VishalJeyaram
@@ -80,7 +81,7 @@ public class FoodBankTest {
     void addCustomMeal8() {
         FoodBank foodBank = new FoodBank();
         String input = "pasta";
-        assertThrows(NoFoodFoundException.class, () -> FoodBank.addCustomMeal(input));
+        assertThrows(EmptyLibraryDescription.class, () -> FoodBank.addCustomMeal(input));
     }
 
     //@@author VishalJeyaram
@@ -88,7 +89,7 @@ public class FoodBankTest {
     void addCustomMeal9() throws FoodBankException {
         FoodBank foodBank = new FoodBank();
         String input = "pasta /c122";
-        assertThrows(EmptyFoodDescription.class, () -> FoodBank.addCustomMeal(input));
+        assertThrows(EmptyLibraryDescription.class, () -> FoodBank.addCustomMeal(input));
     }
 
     //@@author VishalJeyaram
@@ -263,7 +264,7 @@ public class FoodBankTest {
     void addCustomFluid1() {
         FoodBank foodbank = new FoodBank();
         String input = "";
-        assertThrows(NoFoodFoundException.class, () -> foodbank.addCustomFluid(input));
+        assertThrows(EmptyLibraryDescription.class, () -> foodbank.addCustomFluid(input));
     }
 
     //@@author pragyan01
@@ -271,7 +272,7 @@ public class FoodBankTest {
     void addCustomFluid2() {
         FoodBank foodbank = new FoodBank();
         String input = " ";
-        assertThrows(NoFoodFoundException.class, () -> foodbank.addCustomFluid(input));
+        assertThrows(EmptyLibraryDescription.class, () -> foodbank.addCustomFluid(input));
     }
 
     //@@author pragyan01
@@ -279,7 +280,7 @@ public class FoodBankTest {
     void addCustomFluid3() {
         FoodBank foodbank = new FoodBank();
         String input = null;
-        assertThrows(EmptyFoodDescription.class, () -> foodbank.addCustomFluid(input));
+        assertThrows(EmptyLibraryDescription.class, () -> foodbank.addCustomFluid(input));
     }
 
     //@@author pragyan01
@@ -304,7 +305,7 @@ public class FoodBankTest {
     void addCustomFluid6() {
         FoodBank foodbank = new FoodBank();
         String input = "21";
-        assertThrows(NoFoodFoundException.class, () -> foodbank.addCustomFluid(input));
+        assertThrows(EmptyLibraryDescription.class, () -> foodbank.addCustomFluid(input));
     }
 
     //@@author pragyan01
@@ -312,7 +313,7 @@ public class FoodBankTest {
     void addCustomFluid7() {
         FoodBank foodbank = new FoodBank();
         String input = "add fluid";
-        assertThrows(NoFoodFoundException.class, () -> foodbank.addCustomFluid(input));
+        assertThrows(EmptyLibraryDescription.class, () -> foodbank.addCustomFluid(input));
     }
 
     //@@author pragyan01

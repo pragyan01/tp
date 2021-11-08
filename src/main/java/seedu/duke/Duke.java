@@ -102,6 +102,8 @@ public class Duke {
                 System.out.println(ClickfitMessages.INCORRECT_INPUT);
             } catch (DukeException e) {
                 System.out.println("I'm sorry");
+            } catch (Exception e) {
+                System.out.println(ClickfitMessages.UNKNOWN_ERROR_MESSAGE);
             }
         }
         LogManager.getLogManager().reset();

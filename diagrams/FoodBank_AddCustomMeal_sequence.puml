@@ -7,7 +7,7 @@ participant ":FoodBank"
     opt inputArguments == null
     |||
     end
-    note left : if block only throws an exception: EmptyFoodDescription
+    note left : if block only throws an exception: EmptyLibraryDescription
     |||
     ":FoodBank"->":FoodBank" : generateParameters(inputArguments: String)
     |||
