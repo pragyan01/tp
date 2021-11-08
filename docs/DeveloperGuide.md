@@ -658,49 +658,6 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
       Please enter the index of the meal you wish to delete!
       ```
 
-#### Listing meals
-1. Listing meals on a specific date
-    * **Test Case**: `list meals 08/11/2021`
-    * **Expected**:
-      ```
-      1. pasta
-      Calories: 122
-      Date: 08/11/2021
-      Time: 19:17
-      
-      Total number of meals: 1
-      Total calories: 122      
-      ```
-2. Listing meals on all dates
-   * **Test Case**: `list meals all`
-   * **Expected**:
-     ```
-     1. pasta
-     Calories: 122
-     Date: 08/11/2021
-     Time: 19:17
-     
-     2. pizza
-     Calories: 22
-     Date: 15/03/2022
-     Time: 09:37
-     
-     Total number of meals: 2
-     Total calories: 144    
-     ```
-3. Listing meals on current date
-   * **Test Case**: `list meals`
-   * **Expected**:
-     ```
-     1. pasta
-     Calories: 122
-     Date: 08/11/2021
-     Time: 19:17
-     
-     Total number of meals: 1
-     Total calories: 122      
-     ``` 
-
 ### Fluid commands
 
 #### Adding a fluid
@@ -781,41 +738,6 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
      You may wish to list to check the index numbers.
      ```
 
-#### Listing fluids
-1. Listing fluids on a specific date
-   * **Test Case**: `list fluids 08/11/2021`
-   * **Expected**:
-     ```
-     1. cola
-     Calories: 190
-     Volume: 100
-     Date: 01/02/2021
-     Time: 23:59
-     
-     Total number of fluids: 1
-     Total calories: 190
-     ```
-     
-2. Listing fluids on all dates
-   * **Test Case**: `list fluids all`
-   * **Expected**:
-     ```
-     1. cola
-     Calories: 190
-     Volume: 100
-     Date: 01/02/2021
-     Time: 23:59
-     
-     2. sprite
-     Calories: 189
-     Volume: 250
-     Date: 19/09/2022
-     Time: 16:37
-     
-     Total number of fluids: 2
-     Total calories: 379
-     ```
-
 ### FoodBank commands
 
 #### Adding a custom meal
@@ -859,7 +781,7 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
    * **Test Case**: `library deletemeal 1`
    * **Expected**:
      ```
-     pasta will be removed from your meal library. 
+     pasta will be removed from your meal library.
      You now have 0 meals left!
      ```
 
@@ -876,17 +798,6 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
    * **Expected**:
      ```
      Please enter a food index!
-     ```
-#### Listing custom meals
-
-1. Listing meals on a specific date
-   * **Test Case**: `library listmeals`
-   * **Expected**:
-     ```
-     1. pasta
-     Calories: 122
-     
-     Total number of meals in library: 1
      ```
 
 #### Adding a custom fluid
@@ -947,18 +858,6 @@ Note: Keying in "y" will result in the previous session's data being deleted!`
    * **Expected**:
      ```
      Please enter a food index!
-     ```
-
-#### Listing custom fluids
-
-1. Listing fluids on a specific date
-   * **Test Case**: `library listfluids`
-   * **Expected**:
-     ```
-     1. water
-     Calories: 190
-     
-     Total number of fluids in library: 1
      ```
 
 #### Listing calories
