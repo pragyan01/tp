@@ -41,7 +41,7 @@ indicator of the user's progress
 
 1. Ensure that you have Java 11 or above installed.
 
-2. Download the latest version of `CLI.ckFit` from [here](http://link.to/duke).
+2. Download the latest version of `CLI.ckFit` from [here](https://github.com/AY2122S1-CS2113T-F14-3/tp/releases/tag/v2.1).
 
 3. Go to the folder you saved the `CLIckFit.jar` file and note the absolute file path.
 
