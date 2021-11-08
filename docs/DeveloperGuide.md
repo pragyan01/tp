@@ -54,11 +54,11 @@ object that takes in the class-level attributes of Ui to calculate the user's BM
 daily caloric intake through getIdealCalories().
 
 #### Memory startup method
-![Imgur](https://i.imgur.com/7ixwFz2.png)
+![Imgur](https://i.imgur.com/cRw6Bp3.png)
 
 The user is greeted with a prompt that asks whether he wishes to load his saved date. Pressing the "enter" keystroke will 
-load up the previous session's data. typing in "y" will cause the previous session's data to be wiped, meaning the
-contents of the storage text files will all be emptied
+load up the previous session's data. Typing in "y" will cause the previous session's data to be wiped, meaning the
+contents of the storage text files will all be emptied, so the user can start afresh.
 
 #### Get summary of all info stored in text files
 
@@ -132,17 +132,19 @@ The UML sequence diagram above shows what happens when the input command is reco
 
 Above are the UML class level diagrams of `WeightTracker`, `ClickfitMessages`, `Tracker` and relevant exception classes. 
 As seen in the diagram, the `WeightTracker` class is dependent on the `ClickfitMessages` class and inherits from the 
-`Tracker` class. The `WeightTracker` class also throws 4 exceptions which inherit from the `WeightException` class.
+`Tracker` class. The `WeightTracker` class also throws 4 exceptions which inherit from the `WeightException` class to
+print the corresponding error message for each exception.
 This class diagram has been simplified for better readability.
 
 #### Adding weight
 ![WeightTracker_add_sequence](https://user-images.githubusercontent.com/69446729/140641320-d243b7a8-a75c-4960-a731-6aeed02fd7ea.png)
 
-The UML sequence diagram above shows what happens when the input command is recognised as `addweight`.
-The `WeightTracker` class calls the `generateWeightParameters` function which updates the `weight` and `date` 
-variables. Then the `weight` and `date` variables are added to weight array list and `printAddWeightResponse`
-is called from the `ClickfitMessages` class for both the typical input and missing date cases. However,
-when an exception is encountered, the `WeightTracker` class will throw `AddWeightException()` instead.
+The UML sequence diagram above shows what happens when the input command is recognised as `add weight` which
+calls `AddWeights(...)` method in the `WeightTracker` class. The `WeightTracker` class calls the 
+`generateWeightParameters` function which updates the `weight` and `date` variables. Then the `weight` and 
+`date` variables are added to weight array list and `printAddWeightResponse` is called from the `ClickfitMessages` 
+class for both the typical input and missing date cases. However, when an exception is encountered, the 
+`WeightTracker` class will throw `AddWeightException()` instead.
 
 ### ScheduleTracker
 
@@ -211,7 +213,7 @@ sees fit.
 |v2.0|beginner|check my weight summary| check my weight loss or gain progress|
 |v2.0|health conscious individual|know my recommended caloric intake|know how much food to consume in one day|
 |v2.0|health conscious individual| know my BMI indicator|know whether i need to lose weight|
-|v2.0| lazy user| have date and time automatically input depending as system time if i leave it empty| save time and effort for other stuff after my meal or drinks|
+|v2.0| lazy user| have date/time automatically input corresponding to system date/time if i leave it empty| save time and effort for other stuff after my meal or drinks|
 
 ## Appendix C: Non-Functional Requirements
 
