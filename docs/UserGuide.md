@@ -41,7 +41,7 @@ indicator of the user's progress
 
 1. Ensure that you have Java 11 or above installed.
 
-2. Download the latest version of `CLI.ckFit` from [here](http://link.to/duke).
+2. Download the latest version of `CLI.ckFit` from [here](https://github.com/AY2122S1-CS2113T-F14-3/tp/releases/tag/v2.1).
 
 3. Go to the folder you saved the `CLIckFit.jar` file and note the absolute file path.
 
@@ -112,7 +112,8 @@ question:
 
 ```
 Would you like to clear all records of your fitness journey?
-Key in "y" to clear your records, or press enter keystroke to load in data from your previous session(s)
+Key in "y" to clear your records, or press enter keystroke to load in data from 
+your previous session(s)
 Note: Keying in "y" will result in the previous session's data being deleted!
 ```
 
@@ -1139,7 +1140,8 @@ NOTE: You can only omit putting MEAL_CALORIES if you have saved the meal in your
 [Add fluid] | add fluid FLUID_NAME </c FLUID_CALORIES /v VOLUME /d DATE /t TIME>
 [Add weight] | add weight WEIGHT /d <DATE>
 [Add workout] | add workout WORKOUT_NAME /c CALORIES_BURNED </d DATE /t TIME>
-[Add scheduled workout] | add schedule WORKOUT_NAME /d DATE /t TIME </a ACTIVTY_NAME:ACTIVITY_QUANITIFER, ...> </r>
+[Add scheduled workout] | add schedule WORKOUT_NAME /d DATE /t TIME 
+                        | </a ACTIVTY_NAME:ACTIVITY_QUANITIFER, ...> </r>
 [Add meal to library] | library addmeal MEAL_NAME /c MEAL_CALORIES
 [Add fluid to library] | library addfluid FLUID_NAME /c FLUID_CALORIES
 

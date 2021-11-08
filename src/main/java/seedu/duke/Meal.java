@@ -66,16 +66,16 @@ public class Meal extends Tracker {
     public void addMeal(String inputArguments)
             throws DateTimeParseException, NumberFormatException, MealException, FoodBankException {
         logger.entering(getClass().getName(), "addMeal");
-        logger.log(Level.INFO, "generating meal parameters");
         if (inputArguments == null) {
             throw new NoMealDetailsException();
         }
         mealNumber = meals.size();
+        logger.log(Level.INFO, "generating meal parameters");
         generateMealParameters(inputArguments);
+        logger.log(Level.INFO, "meal parameters generated");
         if (Parser.containsSeparators(description)) {
             throw new EmptyFoodDescription();
         }
-        logger.log(Level.INFO, "meal parameters generated");
         String input = combineMealParameters();
         meals.add(input);
         mealNumber += 1;
@@ -84,6 +84,11 @@ public class Meal extends Tracker {
         logger.exiting(getClass().getName(), "addMeal");
     }
 
+    /**
+     * Combines multiple parameters into single input argument to be added to meal arraylist.
+     *
+     * @return inputArguments.
+     */
     public String combineMealParameters() {
         String inputArguments;
         inputArguments = description + Parser.CALORIE_SEPARATOR + calories
@@ -101,6 +106,7 @@ public class Meal extends Tracker {
      */
     public void deleteMeal(String inputArguments)
             throws NumberFormatException, FoodBankException, MealException {
+        logger.entering(getClass().getName(), "deleteMeal");
         if (inputArguments == null) {
             throw new NoDeleteMealIndexException();
         }
@@ -108,7 +114,6 @@ public class Meal extends Tracker {
         if (meals.size() == 0) {
             throw new EmptyMealListException();
         }
-        logger.entering(getClass().getName(), "deleteMeal");
         int mealIndex = Parser.parseStringToInteger(inputArguments) - 1;
         if ((mealIndex < 0) || (mealIndex > (mealNumber - 1))) {
             throw new NoSuchMealIndexException();
