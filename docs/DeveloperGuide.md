@@ -447,7 +447,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Test Case**: `add workout test /c 123 /d 08-11-21 /t 5:00pm`
     * **Expected**: 
       ```
-      Please enter your date and time in the right format. It should be "DD/MM/YYYY" and "HH:MM" respectively.
+      Please enter your date and time in the right format. 
+      It should be "DD/MM/YYYY" and "HH:MM" respectively.
       ```
       
 #### Deleting a workout
@@ -501,7 +502,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Test Case**: `add schedule test /d 12-12-21 /t 11:59pm`
     * **Expected**:
       ```
-      Please enter your date and time in the right format. It should be "DD/MM/YYYY" and "HH:MM" respectively.
+      Please enter your date and time in the right format. 
+      It should be "DD/MM/YYYY" and "HH:MM" respectively.
       ```
       
 5. Adding a scheduled workout with a date in the past
@@ -517,7 +519,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Expected**:
       ```
       Missing activity splitter ":" detected.
-      Please enter [activity name]:[sets]x[reps] or [activity name]:[distance in metres] for your workout activities
+      Please enter [activity name]:[sets]x[reps] or [activity name]:[distance in metres] 
+      for your workout activities
       ```
       
 6. Adding a scheduled workout with activity breakdown, unnecessary quantifier "x"
@@ -525,8 +528,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Expected**:
       ```
       Unnecessary activity quantifier splitter "x" detected.
-      Please enter [activity name]:[distance in metres] for distance based workout activities if your
-      activity name is either running/swimming/cycling.
+      Please enter [activity name]:[distance in metres] for distance based workout activities 
+      if your activity name is either running/swimming/cycling.
       E.g. running:8000
       ```
       
@@ -543,7 +546,8 @@ testers are expected to do more exploratory work for more comprehensive testing.
     * **Expected**: 
       ```
       There was an issue getting your activity breakdown.
-      Please enter a positive integer [distance in metres] for distance based activities(swimming/running/cycling).
+      Please enter a positive integer [distance in metres] for distance based 
+      activities, namely swimming/running/cycling.
       E.g. running:8000
       Enter two positive integers in the format [set]x[reps] for everything else.
       E.g. bench press:3x12
