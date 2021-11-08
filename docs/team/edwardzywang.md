@@ -11,10 +11,21 @@ which can give you an idea of your current fitness level.
 
 #### Enhancements implemented
 * New feature implemented: Command Manager Class:
-  * What it does: A class that makes sense of a user's inputs. 
-  * Why is it needed: It is needed so that commands are all managed and split
-  at a common starting point. This standardises the logic flow and also how we want the user's inputs to be formatted in. Reduces the load on all members when it comes to debugging as the same basic logic flows can be used and compared to
-  quickly isolate bugs and resolve them.
+  * What it does: A class that makes sense of a user's inputs. It first takes in the
+   user's input as string, then splits it in a string array. it takes the sub string to
+   the left of " /c " as the command and the remaining string is further separated
+   into substrings based on other separators. The command substring allows the
+   command manager to decide where to send the user's input to, while the
+   other substrings are the parameters of the user's input commands.
+
+  * Why is it needed: It is needed so that the numerous commands that CLI.ckFit
+    allows the user to utilise are all managed and split at a common starting point.
+    This standardises the logic flow and also how we want the user's inputs to be
+    formatted in. Through standardisation, it reduces the load on all members
+    when it comes to debugging as the same basic logic flows can be used and
+    compared to quickly isolate bugs and resolve them. faster and also
+    standardise the logic pathway of making sense of the user's inputs.
+
   * What is noteworthy about it: Due to the numerous commands that CLI.ckFit supports, command manager is further split into different components,
   namely foodbank parser, command manager, list parser, add parser, delete parser, to manage different types of commands. This makes for a neater outlook 
   on our command manager class when it comes to reviewing, and also when users add new commands or functions of the same type, we can easily refer to 
